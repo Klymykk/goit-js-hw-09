@@ -10,7 +10,7 @@ function onSubmit(evt) {
   let step = Number(form.step.value);
   let amount = form.amount.value;
 
-  for (let i = 0; i < amount; i++) {
+  for (let i = 1; i <= amount; i++) {
     let position = i;
     delay += step;
     console.log(delay);
@@ -23,6 +23,7 @@ function onSubmit(evt) {
       Notiflix.Notify.failure(err);
     });
   }
+  evt.target.reset();
 }
 
 function createPromise(position, delay) {

@@ -52,7 +52,7 @@ function onStartClick() {
     minutes.textContent = timeLeft.minutes.toString().padStart(2,"0");
     seconds.textContent = timeLeft.seconds.toString().padStart(2,"0");
 
-    if(!(targetDate - Date.now())){
+    if((targetDate - Date.now()) < 1000){
       clearInterval(timerId);
     }
   }, 1000);
